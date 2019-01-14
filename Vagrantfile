@@ -4,7 +4,6 @@
 Vagrant.configure("2") do |config|
 
     config.vm.box = "debian/jessie64"
-    config.vm.network "forwarded_port", guest: 3306, host: 3336
 
     config.ssh.insert_key = false
   
