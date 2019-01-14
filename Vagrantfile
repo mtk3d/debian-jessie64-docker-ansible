@@ -7,11 +7,6 @@ Vagrant.configure("2") do |config|
 
     config.ssh.insert_key = false
   
-    config.vm.provider "virtualbox" do |vb|
-      vb.gui = false
-      vb.memory = "2048"
-    end
-  
     #install ansible in os
     config.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
