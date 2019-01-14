@@ -1,0 +1,17 @@
+- hosts: all
+  become: true
+  become_user: root
+  vars_files:
+    - vars.yml
+  pre_tasks:
+  - name: Update repositories
+    apt:
+      update_cache: yes
+
+  roles:
+    - role: geerlingguy.docker
+
+  tasks:
+  - name: Install docker pip packages
+    pip:
+      name: docker-compose
